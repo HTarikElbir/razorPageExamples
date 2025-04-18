@@ -2,7 +2,7 @@ using razorPageExamples.Models;
 
 namespace razorPageExamples.Repository;
 
-public interface IEmployeeRespository
+public interface IEmployeeRepository
 {
     IEnumerable<Employee> GetAllEmployees();
 }
