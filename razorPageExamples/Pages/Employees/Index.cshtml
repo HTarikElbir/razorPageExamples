@@ -16,6 +16,7 @@
                     <h5 class="card-title">@employee.Name</h5>
                     <p class="card-text">@employee.Department</p>
                     <a asp-page="/employees/details" asp-route-id="@employee.Id" class="btn btn-primary">Details</a>
+                    <a asp-page="/employees/edit" asp-route-id="@employee.Id" class="btn btn-primary">Edit</a>
                 </div>
             </div>
         </div>
