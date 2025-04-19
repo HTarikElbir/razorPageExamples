@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using razorPageExamples.Models;
 using razorPageExamples.Repository;
@@ -14,8 +15,14 @@ public class DetailsModel : PageModel
         _employeeRepository = employeeRepository;
     }
     
-    public void OnGet(int id)
+    public IActionResult OnGet(int id)
     {
        Employee = _employeeRepository.GetById(id);
+
+       if (Employee == null)
+       {
+           return RedirectToPage("/NotFound");
+       }
+       return Page();
     }
 }
