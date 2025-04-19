@@ -1,5 +1,18 @@
-@page
+@page "{id}"
 @model DetailsModel
 
 <h1>Details Page</h1>
 
+<div class="card">
+    <div class="col-md-4">
+        <div class="card ">
+            <img src="~/img/@Model.Employee.Photo" alt="" class="card-img-top mx-auto d-block"  style="width: 300px; height: 300px; object-fit: cover;">
+            <div class="card-body text-center">
+                <h5 class="card-title">@Model.Employee.Name</h5>
+                <p class="card-text">@Model.Employee.Department</p>
+                <p class="card-text">@Model.Employee.Email</p>
+                <a asp-page="/employees/index" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

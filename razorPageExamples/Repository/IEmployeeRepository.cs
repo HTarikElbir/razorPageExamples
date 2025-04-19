@@ -5,4 +5,5 @@ namespace razorPageExamples.Repository;
 public interface IEmployeeRepository
 {
     IEnumerable<Employee> GetAllEmployees();
+    Employee GetById(int id);
 }
