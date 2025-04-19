@@ -27,4 +27,18 @@ public class MockEmployeeRepository : IEmployeeRepository
     {
         return _employees.FirstOrDefault(x => x.Id == id);
     }
+
+    public Employee Update(Employee employee)
+    {
+        Employee updatedEmployee = _employees.FirstOrDefault(x => x.Id == employee.Id);
+
+        if (updatedEmployee != null)
+        {
+            updatedEmployee.Name = employee.Name;
+            updatedEmployee.Email = employee.Email;
+            updatedEmployee.Photo = employee.Photo;
+            updatedEmployee.Department = employee.Department;
+        }
+        return updatedEmployee;
+    }
 }
